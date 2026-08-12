@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Ruslan Popesku — Lead iOS Engineer</title>
+<meta name="description" content="Lead iOS Software Engineer at EPAM. 10 years of Swift, SwiftUI and AI tooling for mobile. Lviv, Ukraine — remote.">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Ruslan Popesku — Lead iOS Engineer">
+<meta property="og:description" content="10 years of iOS. Swift, SwiftUI, and AI coding tools for mobile.">
+<meta property="og:url" content="https://rusel95.github.io/popesku/">
+<meta property="og:image" content="https://rusel95.github.io/popesku/og.png"><!-- ⚠️ TODO: додай og.png 1200×630 або прибери цей рядок -->
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://rusel95.github.io/popesku/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+
+<style>
+:root{
+  --bg:#0d0f12; --bg-soft:#15181d; --line:#23272e;
+  --fg:#e8eaed; --fg-dim:#9aa2ad; --fg-faint:#6b7280;
+  --accent:#7dd3a0; --radius:12px; --maxw:720px;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#fbfbfa; --bg-soft:#ffffff; --line:#e6e4e0;
+    --fg:#1a1a19; --fg-dim:#5c5b58; --fg-faint:#8a8884;
+    --accent:#177a4a;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:64px 24px 96px}
+@media(max-width:600px){.wrap{padding:40px 20px 72px}}
+
+a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .15s,color .15s}
+a:hover{color:var(--accent);border-color:var(--accent)}
+
+header{margin-bottom:36px}
+h1{font-size:26px;line-height:1.25;margin:0 0 6px;letter-spacing:-.02em;font-weight:650}
+.tagline{color:var(--fg-dim);margin:0 0 18px;font-size:16px}
+.links{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--fg-dim)}
+.links a{color:var(--fg-dim);border:none}
+.links a:hover{color:var(--accent)}
+
+nav.tabs{display:flex;gap:4px;margin:0 0 32px;border-bottom:1px solid var(--line)}
+nav.tabs button{
+  appearance:none;background:none;border:none;font:inherit;font-size:14px;font-weight:500;
+  color:var(--fg-faint);cursor:pointer;padding:9px 14px;margin-bottom:-1px;
+  border-bottom:2px solid transparent;transition:color .15s,border-color .15s;
+}
+nav.tabs button:hover{color:var(--fg)}
+nav.tabs button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--accent)}
+
+.panel{display:none;animation:fade .25s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+h2{font-size:13px;text-transform:uppercase;letter-spacing:.09em;color:var(--fg-faint);
+   font-weight:600;margin:40px 0 14px}
+h2:first-child{margin-top:0}
+p{margin:0 0 16px;color:var(--fg-dim)}
+.panel p strong{color:var(--fg);font-weight:600}
+
+.projects{display:grid;gap:14px}
+.card{
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;transition:border-color .15s,transform .15s;
+}
+.card:hover{border-color:var(--fg-faint);transform:translateY(-1px)}
+.card-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px}
+.card h3{margin:0;font-size:17px;font-weight:620;letter-spacing:-.01em}
+.card h3 a{border:none}
+.badge{
+  font-size:11px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;
+  color:var(--accent);border:1px solid var(--accent);opacity:.85;
+  padding:2px 8px;border-radius:99px;white-space:nowrap;
+}
+.badge.wip{color:var(--fg-faint);border-color:var(--line)}
+.card p{margin:0 0 12px;font-size:15px}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;color:var(--fg-faint);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+.card-links{margin-top:12px;display:flex;gap:16px;font-size:14px}
+.card-links a{color:var(--accent);border:none}
+.card-links a:hover{text-decoration:underline}
+
+.row{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:16px 0;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:none;padding-top:0}
+@media(max-width:600px){.row{grid-template-columns:1fr;gap:4px}}
+.when{color:var(--fg-faint);font-size:14px;font-variant-numeric:tabular-nums}
+.what h3{margin:0 0 2px;font-size:16px;font-weight:600}
+.what .where{color:var(--fg-dim);font-size:14px;margin:0 0 8px}
+.what ul{margin:0;padding-left:18px;color:var(--fg-dim);font-size:15px}
+.what li{margin-bottom:4px}
+
+.stack{display:flex;flex-wrap:wrap;gap:7px}
+.stack span{font-size:13px;color:var(--fg-dim);background:var(--bg-soft);
+  border:1px solid var(--line);border-radius:7px;padding:4px 10px}
+
+footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
+  color:var(--fg-faint);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Ruslan Popesku</h1>
+  <p class="tagline">Lead iOS Engineer. Ten years of Swift — and lately, a lot of time
+    spent making AI coding tools actually useful on mobile projects.</p>
+  <div class="links">
+    <a href="mailto:ruslanpopesku95@gmail.com">Email</a>
+    <a href="https://github.com/rusel95" rel="me">GitHub</a>
+    <a href="https://www.linkedin.com/in/rusel95" rel="me">LinkedIn</a>
+    <!-- ⚠️ TODO: додай App Store developer link, коли буде -->
+  </div>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button role="tab" id="t-projects" aria-controls="p-projects" aria-selected="true">Projects</button>
+  <button role="tab" id="t-resume"   aria-controls="p-resume"   aria-selected="false">Résumé</button>
+  <button role="tab" id="t-about"    aria-controls="p-about"    aria-selected="false">About</button>
+</nav>
+
+<!-- ============ PROJECTS ============ -->
+<section class="panel active" id="p-projects" role="tabpanel" aria-labelledby="t-projects">
+
+  <h2>Open source</h2>
+  <div class="projects">
+
+    <article class="card">
+      <div class="card-head">
+        <h3><a href="https://github.com/rusel95/ios-agent-skills">ios-agent-skills</a></h3>
+        <span class="badge">Open source</span>
+      </div>
+      <p>Production-tested skills for AI coding agents working on iOS codebases — SwiftUI MVVM,
+         UIKit MVVM, VIPER, TCA, Swift Concurrency, GCD, testing and security. Built from
+         patterns that survived real projects, not from documentation.</p>
+      <div class="meta">
+        <span class="tag">Python</span><span class="tag">Claude Code</span><span class="tag">Agent skills</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/rusel95/ios-agent-skills">GitHub →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <h3><a href="https://github.com/rusel95/Offline-AI-ML-Playground">Offline AI/ML Playground</a></h3>
+        <span class="badge">Open source</span>
+      </div>
+      <p>A testbed for running AI and ML models fully on-device across Apple platforms —
+         no server, no round-trip, no data leaving the phone.</p>
+      <div class="meta">
+        <span class="tag">Swift</span><span class="tag">Core ML</span><span class="tag">On-device inference</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/rusel95/Offline-AI-ML-Playground">GitHub →</a>
+      </div>
+    </article>
+  </div>
+
+  <h2>Apps</h2>
+  <div class="projects">
+
+    <!-- ⚠️ TODO: я не знаю, що робить Compresso. Перепиши перше речення. -->
+    <article class="card">
+      <div class="card-head">
+        <h3><a href="#">Compresso</a></h3>
+        <span class="badge">iOS</span>
+      </div>
+      <p>One sentence: what problem it solves, for whom. Lead with the user's problem,
+         not the technology.</p>
+      <div class="meta">
+        <span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">StoreKit 2</span>
+      </div>
+      <div class="card-links">
+        <a href="#">App Store →</a>
+      </div>
+    </article>
+
+    <!-- ⚠️ TODO: Hush чи SleepNoise? У переписці були обидві назви. -->
+    <article class="card">
+      <div class="card-head">
+        <h3><a href="#">Hush</a></h3>
+        <span class="badge wip">In progress</span>
+      </div>
+      <p>One sentence. If it isn't shipped, name the stage — "in TestFlight", "launching this
+         autumn". Vagueness reads as vapourware.</p>
+      <div class="meta">
+        <span class="tag">Swift</span><span class="tag">AVFoundation</span>
+      </div>
+      <div class="card-links">
+        <a href="#">TestFlight →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ RESUME ============ -->
+<section class="panel" id="p-resume" role="tabpanel" aria-labelledby="t-resume">
+
+  <h2>Experience</h2>
+
+  <!-- ⚠️ TODO: дати я не знаю — постав реальні -->
+  <div class="row">
+    <div class="when">20XX — now</div>
+    <div class="what">
+      <h3>Lead iOS Software Engineer</h3>
+      <p class="where">EPAM Systems · Lviv / Remote</p>
+      <ul>
+        <li>Lead iOS delivery for client products — architecture, code review, technical direction.</li>
+        <li>Introduced AI-assisted development workflows into day-to-day iOS work.</li>
+        <li>⚠️ Add one line with a number in it. It's the line people actually reread.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ⚠️ TODO: попередні місця роботи — я їх не знаю. Заповни або видали блок. -->
+  <div class="row">
+    <div class="when">20XX — 20XX</div>
+    <div class="what">
+      <h3>Senior iOS Engineer</h3>
+      <p class="where">Company</p>
+      <ul>
+        <li>What you owned, not what the team did.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">2016 — now</div>
+    <div class="what">
+      <h3>Independent projects</h3>
+      <p class="where">Side work</p>
+      <ul>
+        <li>Own iOS apps end to end: design, build, App Store listing, monetisation.</li>
+        <li>Open-source tooling for AI agents on iOS codebases.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Stack</h2>
+  <div class="stack">
+    <span>Swift</span><span>SwiftUI</span><span>UIKit</span>
+    <span>Swift Concurrency</span><span>Combine</span><span>TCA</span>
+    <span>VIPER</span><span>Core ML</span><span>StoreKit 2</span>
+    <span>XCTest</span><span>Git</span><span>Claude Code</span>
+  </div>
+
+  <h2>Education</h2>
+  <!-- ⚠️ TODO: заповни або видали цю секцію -->
+  <div class="row">
+    <div class="when">20XX — 20XX</div>
+    <div class="what">
+      <h3>Degree</h3>
+      <p class="where">University</p>
+    </div>
+  </div>
+
+  <h2>Download</h2>
+  <!-- ⚠️ TODO: поклади cv.pdf поруч з index.html, або видали цей блок -->
+  <p><a href="./cv.pdf">CV as PDF →</a></p>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="panel" id="p-about" role="tabpanel" aria-labelledby="t-about">
+  <p>I've been writing iOS software for about ten years. These days I lead iOS work at
+     <strong>EPAM</strong> and spend most of my own time on two things: shipping small
+     apps of my own, and figuring out where AI coding agents actually earn their keep on
+     a real Swift codebase — which is a narrower set of places than the demos suggest.</p>
+
+  <p>That second interest turned into <a href="https://github.com/rusel95/ios-agent-skills">ios-agent-skills</a>:
+     the architecture patterns and guardrails I kept re-explaining to agents, written down once.</p>
+
+  <p>Based in Lviv, Ukraine. Working remotely.
+     Fastest way to reach me is <a href="mailto:ruslanpopesku95@gmail.com">email</a>.</p>
+</section>
+
+<footer>
+  <span>© <span id="y">2026</span> Ruslan Popesku</span>
+  <span>Hand-written HTML. Hosted on GitHub Pages.</span>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('nav.tabs button'));
+  function show(id, push) {
+    tabs.forEach(function (t) {
+      var on = t.id === 't-' + id;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      document.getElementById('p-' + t.id.slice(2)).classList.toggle('active', on);
+    });
+    if (push) history.replaceState(null, '', '#' + id);
+  }
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () { show(t.id.slice(2), true); });
+  });
+  document.querySelector('nav.tabs').addEventListener('keydown', function (e) {
+    var i = tabs.indexOf(document.activeElement);
+    if (i < 0) return;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      var n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      n.focus(); n.click();
+    }
+  });
+  var h = location.hash.replace('#', '');
+  if (document.getElementById('p-' + h)) show(h, false);
+  document.getElementById('y').textContent = new Date().getFullYear();
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ruslan Popesku",
+  "jobTitle": "Lead iOS Software Engineer",
+  "worksFor": { "@type": "Organization", "name": "EPAM Systems" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Lviv", "addressCountry": "UA" },
+  "email": "mailto:ruslanpopesku95@gmail.com",
+  "url": "https://rusel95.github.io/popesku/",
+  "sameAs": [
+    "https://github.com/rusel95",
+    "https://www.linkedin.com/in/rusel95"
+  ]
+}
+</script>
+</body>
+</html>
